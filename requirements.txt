@@ -1,20 +1,57 @@
-# ============================================
-# DeepTutor Python Dependencies (Runtime Bundle)
-# ============================================
-# Python >= 3.11 required
-#
-# Single source of truth: pyproject.toml `[project.optional-dependencies]`.
-# Files under requirements/ mirror those extras for Docker/CI installs that
-# don't yet have access to pyproject.toml + source code.
-#
-# Preferred install (from a source clone):
-#   pip install -e ".[cli]"            # CLI (RAG + providers + document parsing)
-#   pip install -e ".[server]"         # CLI + FastAPI/uvicorn (Web/API)
-#   pip install -e ".[tutorbot]"       # Server + TutorBot agent engine
-#   pip install -e ".[math-animator]"  # Manim animation engine (addon)
-#   pip install -e ".[dev]"            # Server + dev/test tools
-#   pip install -e ".[all]"            # Everything
-#
-# This file installs the full server runtime (CLI + API + TutorBot).
+# Core dependencies for DeepTutor
 
--r requirements/tutorbot.txt
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# LLM and AI
+openai==1.35.3
+anthropologic==0.28.0
+tiktoken==0.7.0
+langchain==0.2.6
+langchain-openai==0.1.13
+langchain-community==0.2.6
+langchain-core==0.2.11
+
+# Vector store and embeddings
+faiss-cpu==1.8.0
+chromadb==0.5.3
+
+# Document processing
+pypdf==4.2.0
+python-docx==1.1.2
+markdownify==0.12.1
+unstructured==0.14.8
+
+# Data handling
+pydantic==2.7.4
+pydantic-settings==2.3.4
+numpy==1.26.4
+pandas==2.2.2
+
+# Database
+sqlalchemy==2.0.31
+alembic==1.13.1
+aiosqlite==0.20.0
+
+# HTTP client
+httpx==0.27.0
+requests==2.32.3
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Caching
+redis==5.0.7
+
+# Utilities
+python-dotenv==1.0.1
+loguru==0.7.2
+tenacity==8.4.1
+
+# Testing
+pytest==8.2.2
+pytest-asyncio==0.23.7
+httpx==0.27.0
