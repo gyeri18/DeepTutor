@@ -85,6 +85,10 @@ DeepTutor/
 └── .env.example_CN     # China-specific configuration template
 ```
 
+## Personal Notes
+
+> **Note (personal fork):** I'm using this primarily to experiment with local Ollama models. If you're doing the same, make sure to set `LLM_PROVIDER=ollama` and `OLLAMA_BASE_URL=http://localhost:11434` in your `.env` file. Works well with `llama3` and `mistral`.
+
 ## Contributing
 
 We welcome contributions! Please check our [issue templates](.github/ISSUE_TEMPLATE/) for:
