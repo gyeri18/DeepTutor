@@ -88,6 +88,8 @@ DeepTutor/
 ## Personal Notes
 
 > **Note (personal fork):** I'm using this primarily to experiment with local Ollama models. If you're doing the same, make sure to set `LLM_PROVIDER=ollama` and `OLLAMA_BASE_URL=http://localhost:11434` in your `.env` file. Works well with `llama3` and `mistral`.
+>
+> **Ollama tip:** I've found that setting `OLLAMA_NUM_CTX=8192` in your Ollama model config noticeably improves responses on longer documents — the default context window is too small for most PDFs.
 
 ## Contributing
 
@@ -103,4 +105,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 ## Acknowledgements
 
 - Original project: [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor)
-- Built with [Gradio](https://gradio.app/), [LangChain](https://langchain.com/), and other open-source tools
